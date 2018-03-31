@@ -32,51 +32,13 @@
             }
         },
 
-        methods: {
-            //queryInterinos: async function () {
-            //    let response = await this.$http.get(queryInterinos: async function () {
-            //    let response = await this.$http.get('/api/Chorradia/People')
-            //    console.log(response.data);
-            //    this.people = response.data;
-            //})
-            //    console.log(response.data);
-            //    this.people = response.data;
-            //}
-
+        methods: {         
             queryInterinos: function () {
                 fetch('/api/Chorradia/People')
                     .then(response => response.json())
                     .then(json => this.people = json);
             }
-        },
-
-        //async created() {
-        //    // ES2017 async/await syntax via babel-plugin-transform-async-to-generator
-        //    // TypeScript can also transpile async/await down to ES5
-        //    try {
-        //        let response = await this.$http.get('/api/SampleData/WeatherForecasts')
-        //        console.log(response.data);
-        //        this.forecasts = response.data;
-        //    } catch (error) {
-        //        console.log(error)
-        //    }
-
-        //    try {
-        //        let response = await this.$http.get('/api/Chorradia/People')
-        //        console.log(response.data);
-        //        this.people = response.data;
-        //    } catch (error) {
-        //        console.log(error)
-        //    }
-        //    // Old promise-based approach
-        //    //this.$http
-        //    //    .get('/api/SampleData/WeatherForecasts')
-        //    //    .then(response => {
-        //    //        console.log(response.data)
-        //    //        this.forecasts = response.data
-        //    //    })
-        //    //    .catch((error) => console.log(error))*/
-        //}
+        },      
     }
 </script>
 <style>
