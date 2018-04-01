@@ -1,16 +1,14 @@
 <template>
     <div>
-        <h1>Weather forecast</h1>
+        <h1>Mi ejemplillo</h1>
         <p>This component demonstrates fetching data from the server.</p>
-        <p v-if="!people"><em>Pulse el botoncejo para cargar</em></p>
-        <button @click="queryInterinos()">Cargar</button>
+        <p v-if="!people"><em>Pulse el botoncejo para cargar los datos desde el backend</em></p>
+        <button @click="retrieveData()">Cargar</button>
         <table class="table" v-if="people">
             <thead>
                 <tr>
-                    <th>Date</th>
-                    <th>Temp. (C)</th>
-                    <th>Temp. (F)</th>
-                    <th>Summary</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
                 </tr>
             </thead>
             <tbody>
@@ -33,8 +31,8 @@
         },
 
         methods: {         
-            queryInterinos: function () {
-                fetch('/api/Chorradia/People')
+            retrieveData: function () {
+                fetch('/api/Ejemplo/People')
                     .then(response => response.json())
                     .then(json => this.people = json);
             }
